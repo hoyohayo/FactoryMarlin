@@ -7,16 +7,14 @@
 
 <img align="right" width=180 src="https://yt3.ggpht.com/ytc/AAUvwniRECzqQDhtX2KDyOL3bc2NMap_PMMvdhDrHGQW3Q=s176-c-k-c0x00ffffff-no-rj" />
 
-[//]: # (<img align="right" width=175 src="buildroot/share/pixmaps/logo/marlin-250.png" />)
-
 You likely have found your way here because you are looking for the latest firmware for your BIQU machine or because you are looking for some information on how to tune your machine/resolve an issue. This repository has been developed over time to include as much valuable information as possible. In order to get the most out of it please read the readme files in detail. This will save you time and help the author to help others who's issues are not covered in this material.
 
 This repo currently contains firmware and information related to the following BIQU machines:
 
-BIQU Machine Model | Latest Marlin Supported | Latest TFT Build
------------- | ------------- | -------------
-BIQU BX | 2.0.6.1 | Not applicable
-BIQU B1 | 2.0.7.2 | 25 December 2020
+| BIQU Machine Model | Latest Marlin Supported | Latest TFT Build |
+|--------------------|-------------------------|------------------|
+| BIQU BX | 2\.0.6.1 | Not applicable |
+| BIQU B1 | 2\.0.7.2 | 25 December 2020 |
 
 ## Before you consider firmware
 
@@ -29,10 +27,10 @@ These guides should **definitely** be reviewed if you are assembling your machin
 3. Z-banding
 4. Many other print defects caused by poor mechanics.
 
-BIQU Machine Model | Mechanical setup guide
------------- | -------------
-BIQU BX | https://gist.github.com/looxonline/7f6a628debfa35c60a7dd3dc225d95bc
-BIQU B1 | https://gist.github.com/looxonline/808a204f4f881462403f2baeefc1f69b
+| BIQU Machine Model | Mechanical setup guide |
+|--------------------|------------------------|
+| BIQU BX | https://gist.github.com/looxonline/7f6a628debfa35c60a7dd3dc225d95bc |
+| BIQU B1 | https://gist.github.com/looxonline/808a204f4f881462403f2baeefc1f69b |
 
 ## Using the firmware from this repo.
 
@@ -44,24 +42,22 @@ Each firmware variant is stored in a branch. You don't need to know much about g
 
 The available branches for the B1 are:
 
-Branch Name | Variant Properties
------------- | -------------
-B1_STOCK | If you have built your B1 out of the box and done nothing else to it then this is the branch for you.
-B1_ABL | If you have added an ABL sensor (BL Touch or other) then this is the branch for you. This does a 3x3 probe on the bed which is not the highest resolution but is often enough for beds that are not badly warped.
-B1_ABL_HIGH_RES | If you have added an ABL sensor (BL Touch or other) and you want a higher res on the bed probing because of slightly more warping and are happy to pay a small time penalty at the start of each print then this is for you. This does a 4 x 4 probe.
-B1_ABL_SUPER_RES | If you have added an ABL sensor (BL Touch or other) and you want an incredibly high res probe of the bed and are willing to wait a few minutes extra at the start of each print then this is for you.  This does a 5 x 5 probe.
-B1_UBL_INSANE_RES | READ ME FIRST!!! This branch is strictly in beta. Before you even think about using it you must make sure that you are using this mount for your BL touch and not the stock one: https://www.thingiverse.com/thing:4564987. If you try to use it with the stock mount and the nozzle crashes into the bed then you can't say I didn't warn you. This branch has been designed to help people who have very warped beds (such as the B1 unit I have). Many printers in this range ship like this and many people will just use a glass bed to overcome it. However, I really enjoy the adhesion properties of the SSS bed and therefore wanted to be able to use it, hence this branch was born. The branch uses UBL instead of ABL which basically means that a highly detailed probe of 15 x 15 points is taken on a once off basis and then three points are sampled before each print just to check whether that mesh has changed orientation at all. The results on my bed were remarkable. For detailed usage instructions please follow the gist located here: https://gist.github.com/looxonline/eaa426a1be67148f1cf6242e0e8efbcb
-B1_ABL_SFS | On hold due to lack of a meaningful userbase.
-
-
+| Branch Name | Variant Properties |
+|-------------|--------------------|
+| B1_STOCK | If you have built your B1 out of the box and done nothing else to it then this is the branch for you. |
+| B1_ABL | If you have added an ABL sensor (BL Touch or other) then this is the branch for you. This does a 3x3 probe on the bed which is not the highest resolution but is often enough for beds that are not badly warped. |
+| B1_ABL_HIGH_RES | If you have added an ABL sensor (BL Touch or other) and you want a higher res on the bed probing because of slightly more warping and are happy to pay a small time penalty at the start of each print then this is for you. This does a 4 x 4 probe. |
+| B1_ABL_SUPER_RES | If you have added an ABL sensor (BL Touch or other) and you want an incredibly high res probe of the bed and are willing to wait a few minutes extra at the start of each print then this is for you. This does a 5 x 5 probe. |
+| B1_UBL_INSANE_RES | READ ME FIRST!!! This branch is strictly in beta. Before you even think about using it you must make sure that you are using this mount for your BL touch and not the stock one: https://www.thingiverse.com/thing:4564987. If you try to use it with the stock mount and the nozzle crashes into the bed then you can't say I didn't warn you. This branch has been designed to help people who have very warped beds (such as the B1 unit I have). Many printers in this range ship like this and many people will just use a glass bed to overcome it. However, I really enjoy the adhesion properties of the SSS bed and therefore wanted to be able to use it, hence this branch was born. The branch uses UBL instead of ABL which basically means that a highly detailed probe of 15 x 15 points is taken on a once off basis and then three points are sampled before each print just to check whether that mesh has changed orientation at all. The results on my bed were remarkable. For detailed usage instructions please follow the gist located here: https://gist.github.com/looxonline/eaa426a1be67148f1cf6242e0e8efbcb |
+| B1_ABL_SFS | On hold due to lack of a meaningful userbase. |
 
 The available branches for the BX are listed below. Should you choose to use one of these branches then you **must** read through the gist located here as well as the "Using the firmware on the BX" section below https://gist.github.com/looxonline/94510f433c0f40ddcacbbecc384e844f.
 
-Branch Name | Variant Properties
------------- | -------------
-BX_ALMOST_STOCK | Use this if you are running an "almost" stock BX. I say almost because it does require you to remove the z-endstop switch which is actually completely unnecessary when running an ABL probe and in fact more of a source of problems than anything else. It otherwise differs from the standard BIQU firmware in that it enables some useful features which have not been enabled in theirs such as automatic z-leveling and linear advance. It also increases the maximum acceleration speeds to levels which are more suited to such a capable printer. You can also apply the fan silencing modification (see the opening gist for the BX) using this firmware but you still have the option to run it without applying the modification. Make sure that you read the section below on how to use it before you install it.
-BX_UPS | Want to install a mini-UPS into your BX so that you have power loss recovery with the ability to park the print head? Want to have a way to cause the raspberry pi to shut down gracefully after flicking the power switch instead of just having power yanked? This is the branch for you. If you plan to use this branch then take note of the instructions in the gist located here: COMING SOON.
-BX_PCB | Want to use your BX to make printed circuit boards? This is the distro for you. Just don't try to use this firmware to print anything otherwise you're not going to have a good time. Follow this gist for instructions on how to do the conversion: COMING SOON.
+| Branch Name | Variant Properties |
+|-------------|--------------------|
+| BX_ALMOST_STOCK | Use this if you are running an "almost" stock BX. I say almost because it does require you to remove the z-endstop switch which is actually completely unnecessary when running an ABL probe and in fact more of a source of problems than anything else. It otherwise differs from the standard BIQU firmware in that it enables some useful features which have not been enabled in theirs such as automatic z-leveling and linear advance. It also increases the maximum acceleration speeds to levels which are more suited to such a capable printer. You can also apply the fan silencing modification (see the opening gist for the BX) using this firmware but you still have the option to run it without applying the modification. Make sure that you read the section below on how to use it before you install it. |
+| BX_UPS | Want to install a mini-UPS into your BX so that you have power loss recovery with the ability to park the print head? Want to have a way to cause the raspberry pi to shut down gracefully after flicking the power switch instead of just having power yanked? This is the branch for you. If you plan to use this branch then take note of the instructions in the gist located here: COMING SOON. |
+| BX_PCB | Want to use your BX to make printed circuit boards? This is the distro for you. Just don't try to use this firmware to print anything otherwise you're not going to have a good time. Follow this gist for instructions on how to do the conversion: COMING SOON. |
 
 Once you are sure about which branch you plan to install, select it from the drop down menu located at the top left of the page.
 
@@ -114,11 +110,11 @@ Here is a list of useful mods that you may want to perform on your machine. If t
 
 First for the BX:
 
-Mod Name | Mod Link
------------- | -------------
-BX Silent fan mod | https://gist.github.com/looxonline/2966862620b831a33cb36340ed73f644
-BX USB free pi integration | https://gist.github.com/looxonline/89e79b2554771eee8aa8b6492f30400d
-BX Pi safe, auto shutdown | https://gist.github.com/looxonline/fd260bfc29c124f22fe7613311ae3a79
+| Mod Name | Mod Link |
+|----------|----------|
+| BX Silent fan mod | https://gist.github.com/looxonline/2966862620b831a33cb36340ed73f644 |
+| BX USB free pi integration | https://gist.github.com/looxonline/89e79b2554771eee8aa8b6492f30400d |
+| BX Pi safe, auto shutdown | https://gist.github.com/looxonline/fd260bfc29c124f22fe7613311ae3a79 |
 
 B1 Mod list coming soon...
 
